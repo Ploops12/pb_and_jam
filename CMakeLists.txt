@@ -4,14 +4,14 @@ cmake_minimum_required(VERSION 3.19...3.24)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Not ideal to use this global variable, but necessary to make sure that tooling and projects use the same version
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 # strongly encouraged to enable this globally to avoid conflicts between -Wpedantic being enabled and -std=c++20 and -std=gnu++20 for
 # example when compiling with PCH enabled
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Set the project name to your project name, my project isn't very descriptive
-project(raylib_game
+project(pb_and_jam
         VERSION 0.1.0
         LANGUAGES C CXX)
 
@@ -42,6 +42,8 @@ cpmaddpackage(
         #5.5
         master # use up-to-date branch
 )
+
+## Set flags for Raylib compilation
 target_compile_options(raylib PRIVATE $<$<C_COMPILER_ID:GNU,Clang>:-Wno-error=implicit-function-declaration>)
 target_compile_options(raylib PRIVATE $<$<C_COMPILER_ID:GNU,Clang>:-Wno-unused-result>)
 target_compile_options(raylib PRIVATE $<$<C_COMPILER_ID:GNU>:-Wno-stringop-overflow>)

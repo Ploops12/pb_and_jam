@@ -1,6 +1,6 @@
 add_executable(${PROJECT_NAME})
 # @NOTE: add more source files here
-target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}.cpp)
+target_sources(${PROJECT_NAME} PRIVATE raylib_game.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>")
 target_link_libraries(${PROJECT_NAME} raylib)
