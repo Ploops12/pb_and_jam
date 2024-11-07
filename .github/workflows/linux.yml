@@ -48,7 +48,7 @@ jobs:
     - name: Build Product
       run: |
         cd ${{ env.PROJECT_NAME }}
-        emcmake cmake -DPLATFORM=Desktop -DCMAKE_BUILD_TYPE=MinSizeRel -S . -B build
+        cmake -DPLATFORM=Desktop -DCMAKE_BUILD_TYPE=MinSizeRel -S . -B build
         cd build
         make
 
